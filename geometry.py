@@ -32,6 +32,13 @@ class Line:
         self.point_1 = point_1
         self.point_2 = point_2
 
+    def get_symmetrical(self, point):
+        '''
+        Méthode permettant de récupérer le symétrique du trait par rapport à la
+        ligne formée entre un point passé en argument et l'axe des abscisse
+        '''
+        pass
+
 
 def random_line(max_abscisse=300, max_ordonnee=300):
     '''
