@@ -4,6 +4,7 @@ graphiques du dessin
 '''
 
 from random import randint
+from math import sqrt
 
 
 class Point:
@@ -37,7 +38,18 @@ class Line:
         Méthode permettant de récupérer le symétrique du trait par rapport à la
         ligne formée entre un point passé en argument et l'axe des abscisse
         '''
-        pass
+        intersect_1 = Point(point.x, self.point_1.y)
+        intersect_2 = Point(point.x, self.point_2.y)
+
+        distance_1 = sqrt((self.point_1.x - intersect_1.x)**2 +
+                          (self.point_1.x - intersect_1.x)**2)
+        distance_2 = sqrt((self.point_2.x - intersect_2.x)**2 +
+                          (self.point_2.x - intersect_2.x)**2)
+
+        new_point_1 = Point(intersect_1.x - distance_1, self.point_1.y)
+        new_point_2 = Point(intersect_2.x - distance_2, self.point_2.y)
+
+        return Line(new_point_1, new_point_2)
 
 
 def random_line(max_abscisse=300, max_ordonnee=300):
