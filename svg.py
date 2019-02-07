@@ -4,8 +4,6 @@ servant à l'affichage des différents éléments graphiques
 Auteur: François Goudineau
 '''
 
-import point
-
 
 class SVG:
 
@@ -51,15 +49,16 @@ class SVG:
         footer = '</svg>'
         self.data += footer
 
-    def draw_line(self, point_1, point_2):
+    def draw_line(self, line_object):
         '''
         Méthode permettant de tracer une ligne
         Entree:
-            point_1: premier point où commence le trait
-            point_2: second poin où se finit le trait
+            line_object: objet line représentant la ligne à tracer
         Sortie:
             ajout d'une ligne dans le dessin
         '''
+
+        (point_1, point_2) = (line_object.point_1, line_object.point_2)
         line = '<line x1="{}" y1="{}" x2="{}" y2="{}"\
                 style="stroke:rgb(255,0,0);stroke-width:2" />\n'.format(
             point_1.x, point_1.y, point_2.x, point_2.y
