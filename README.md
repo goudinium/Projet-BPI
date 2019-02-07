@@ -21,7 +21,7 @@ python3 main.py
 
 ## Auteurs
 
-* **François Goudineau** - *Initial work* - [Goudinium](https://github.com/goudinium)
+* **François Goudineau** - *développeur principal* - [Goudinium](https://github.com/goudinium)
 
 ## License
 
