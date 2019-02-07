@@ -4,7 +4,8 @@ développement
 '''
 
 from svg import SVG
-from line import random_line
+from geometry import random_line
+from geometry import Point
 
 dessin = SVG("dessin.svg", 300, 300)
 
@@ -23,12 +24,18 @@ def test_multiple_random():
         dessin.draw_line(ligne)
 
 
+def test_symmetrical():
+    ligne = random_line()
+    dessin.draw_line(ligne)
+    dessin.draw_line(ligne.get_symmetrical(Point(150, 150)))
+
+
 def main():
     '''
     Fonction principale
     '''
     dessin.header()
-    test_multiple_random()
+    test_symmetrical()
     dessin.footer()
     dessin.write_file()
 
