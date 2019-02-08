@@ -30,6 +30,10 @@ class Point:
         '''
         Méthode permettant d'obtenir le symétrique du point en question à
         partir d'un second point passé en argument
+        Entrée:
+            point: point de symétrie
+        Sortie:
+            un objet point symétrique au point de symétrie
         '''
         x_difference = self.x - point.x
         y_difference = self.y - point.y
@@ -49,6 +53,9 @@ class Line:
     def __init__(self, point_1, point_2):
         '''
         Constructeur de la classe line
+        Entrée:
+            point_1: première extrémité du segment
+            point_2: seconde extrémité du segment
         '''
         self.point_1 = point_1
         self.point_2 = point_2
@@ -66,6 +73,11 @@ class Line:
         '''
         Méthode permettant de récupérer le symétrique du trait par rapport à un
         point passé en argument
+        Entrée:
+            point: point par rapport auquel on veut le symétrique de la ligne
+        Sortie:
+            symétrique de la ligne courante par rapport au point passé en
+            argument
         '''
         point_1 = self.point_1.get_symmetrical(point)
         point_2 = self.point_2.get_symmetrical(point)
@@ -76,6 +88,11 @@ class Line:
 def random_point(x_interval=(0, 300), y_interval=(0, 300)):
     '''
     Fonction permettant de générer un point aléatoire
+    Entrée:
+        x_interval: intervalle dans lequel on veut tirer un x au hasard
+        y_interval: intervalle dans lequel on veut tirer un y au hasard
+    Sortie:
+        un point aléatoire
     '''
 
     x = randint(x_interval[0], x_interval[1])
@@ -86,6 +103,11 @@ def random_point(x_interval=(0, 300), y_interval=(0, 300)):
 def random_line(x_interval=(0, 300), y_interval=(0, 300)):
     '''
     Fonction permettant de générer une ligne aléatoire
+    Entrée:
+        x_interval: intervalle dans lequel on veut tirer les abscisses des
+                    extrémités au hasard
+        y_interval: intervalle dans lequel on veut tirer les ordonnées des
+                    extrémités au hasard
     '''
 
     return Line(random_point(x_interval, y_interval),
