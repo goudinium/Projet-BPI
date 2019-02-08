@@ -1,5 +1,6 @@
 '''
 Fichier principal
+Lien vers le repo GitHub : https://github.com/goudinium/Projet-BPI
 '''
 
 from geometry import random_line
