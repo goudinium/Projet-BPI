@@ -68,6 +68,10 @@ class SVG:
     def draw_point(self, point_object):
         '''
         Méthode permettant de tracer un point
+        Entrée:
+            point_object: point que l'on veut dessiner
+        Sortie:
+            ajout du point dans le dessin
         '''
         point = '<circle cx="{}" cy="{}" r="10" stroke="black"\
                  stroke-width="3" fill="red" />\n'.format(point_object.x,

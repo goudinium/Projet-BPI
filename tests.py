@@ -11,17 +11,27 @@ dessin = SVG("dessin.svg", 1000, 1000)
 
 
 def test_line():
+    '''
+    Test affichant une ligne aléatoire sur le dessin svg
+    '''
     ligne = random_line()
     dessin.draw_line(ligne)
 
 
 def test_multiple_random():
+    '''
+    Test affichant 7 lignes aléatoires sur le dessin svg
+    '''
     for _ in range(7):
         ligne = random_line((500, 1000), (0, 1000))
         dessin.draw_line(ligne)
 
 
 def test_symmetrical_point():
+    '''
+    Test permettant d'afficher le symétrique d'un point tiré au hasard par
+    rapport à un point de symétrie
+    '''
     point_of_symmetry = Point(500, 500)
     point_test = random_point()
     dessin.draw_point(point_test)
@@ -30,6 +40,10 @@ def test_symmetrical_point():
 
 
 def test_symmetrical_line():
+    '''
+    Test permettant d'afficher le symétrique d'une ligne aléatoire par rapport
+    à un point de symétrie
+    '''
     point_of_symmetry = Point(500, 500)
     ligne = random_line((500, 700), (0, 500))
     dessin.draw_line(ligne)
