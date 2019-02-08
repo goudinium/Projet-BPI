@@ -65,6 +65,15 @@ class SVG:
         )
         self.data += line
 
+    def draw_point(self, point_object):
+        '''
+        Méthode permettant de tracer un point
+        '''
+        point = '<circle cx="{}" cy="{}" r="10" stroke="black"\
+                 stroke-width="3" fill="red" />\n'.format(point_object.x,
+                                                          point_object.y)
+        self.data += point
+
     def write_file(self):
         '''
         Méthode permettant d'écrire le code du dessin dans le fichier
