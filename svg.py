@@ -36,8 +36,9 @@ class SVG:
         Sortie:
             ajout de l'en tête dans le fichier
         '''
-        header = '<svg height="{}" width="{}">\n'.format(
-            self.height, self.width)
+        header = '<svg xmlns="http://www.w3.org/2000/svg" \
+                   xmlns:xlink="http://www.w3.org/1999/xlink" \
+                   height="{}" width="{}">\n'.format(self.height, self.width)
         self.data += header
 
     def footer(self):
