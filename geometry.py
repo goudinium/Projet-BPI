@@ -4,7 +4,7 @@ graphiques du dessin
 '''
 
 from random import randint
-from math import sqrt
+from math import sqrt, cos, sin, pi
 
 
 class Point:
@@ -42,6 +42,18 @@ class Point:
         new_y = self.y - 2 * y_difference
         symmetrical = Point(new_x, new_y)
         return symmetrical
+
+    def rotate(self, center, angle):
+        '''
+        Fonction retournant un point qui est l'image de la rotation du 
+        point courant par rapport à un centre et un angle passés en 
+        paramètres.
+        '''
+        angle = angle * (pi / 180)
+        new_x = (self.x - center.x) * cos(angle) - (self.y - center.y) * sin(angle) + center.x
+        new_y = (self.x - center.x) * sin(angle) + (self.y - center.y) * cos(angle) + center.y
+
+        return Point(new_x, new_y)
 
 
 class Line:
