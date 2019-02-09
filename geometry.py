@@ -26,20 +26,20 @@ class Point:
         result = "{},{}".format(self.x, self.y)
         return result
 
-    def get_symmetrical(self, point):
+    def get_symmetrical(self, x_coord):
         '''
         Méthode permettant d'obtenir le symétrique du point en question à
-        partir d'un second point passé en argument
+        partir d'une valeur sur l'axe des abscisses
         Entrée:
-            point: point de symétrie
+            x_coord: une valeur pour x 
         Sortie:
             un objet point symétrique au point de symétrie
         '''
-        x_difference = self.x - point.x
-        y_difference = self.y - point.y
 
-        new_x = self.x - 2 * x_difference
-        new_y = self.y - 2 * y_difference
+        distance = abs(self.x - x_coord)
+        
+        new_x = self.x - 2*distance if x_coord < self.x else self.x + 2*distance 
+        new_y = self.y
         symmetrical = Point(new_x, new_y)
         return symmetrical
 
@@ -81,18 +81,18 @@ class Line:
             self.point_1, self.point_2)
         return result
 
-    def get_symmetrical(self, point):
+    def get_symmetrical(self, x_coord):
         '''
         Méthode permettant de récupérer le symétrique du trait par rapport à un
-        point passé en argument
+        x passé en argument
         Entrée:
-            point: point par rapport auquel on veut le symétrique de la ligne
+            x_coord: point de l'abscisse par rapport auquel on veut le symétrique de la ligne
         Sortie:
             symétrique de la ligne courante par rapport au point passé en
             argument
         '''
-        point_1 = self.point_1.get_symmetrical(point)
-        point_2 = self.point_2.get_symmetrical(point)
+        point_1 = self.point_1.get_symmetrical(x_coord)
+        point_2 = self.point_2.get_symmetrical(x_coord)
 
         return Line(point_1, point_2)
     
