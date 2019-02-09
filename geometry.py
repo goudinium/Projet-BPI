@@ -95,6 +95,15 @@ class Line:
         point_2 = self.point_2.get_symmetrical(point)
 
         return Line(point_1, point_2)
+    
+    def rotate(self, center, angle):
+        '''
+        Méthode permettant d'effectuer une rotation de la ligne courante selon un
+        point central et un angle passés en paramètres
+        '''
+        point_1 = self.point_1.rotate(center, angle)
+        point_2 = self.point_2.rotate(center, angle)
+        return Line(point_1, point_2)
 
 
 def random_point(x_interval=(0, 300), y_interval=(0, 300)):
