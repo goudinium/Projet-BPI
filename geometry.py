@@ -35,7 +35,13 @@ class Point:
         Sortie:
             un objet point symétrique au point de symétrie
         '''
-        return self.rotate(point, 180)
+        x_difference = self.x - point.x
+        y_difference = self.y - point.y
+
+        new_x = self.x - 2 * x_difference
+        new_y = self.y - 2 * y_difference
+        symmetrical = Point(new_x, new_y)
+        return symmetrical
 
     def rotate(self, center, angle):
         '''
