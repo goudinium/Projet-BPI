@@ -15,7 +15,10 @@ def generate_random_lines(nb_lines=7):
     Sortie:
         lines: un tableau contenant les objets lignes précédemment générés
     '''
-    return [random_line() for _ in nb_lines]
+    return [random_line() for _ in range(nb_lines)]
+
+def get_symmetric(lines):
+    return lines + list(map(lambda x: x.get_symmetrical(500), lines))
 
 
 def main():
@@ -26,6 +29,7 @@ def main():
     drawing.header()
 
     lines = generate_random_lines()
+    lines = get_symmetric(lines)
     for line in lines:
         drawing.draw_line(line)
 
