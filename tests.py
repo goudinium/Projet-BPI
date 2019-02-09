@@ -63,13 +63,24 @@ def test_rotation_point():
     dessin.draw_point(rnd_point)
     dessin.draw_point(rnd_point.rotate(center, angle))
 
+def test_rotation_line():
+    '''
+    Test permettant de vérifier que la rotation d'une ligne se passe correctement
+    '''
+    center = Point(500, 500)
+    rnd_line = random_line((500, 700), (0,500))
+    angle = 180
+    dessin.draw_point(center)
+    dessin.draw_line(rnd_line)
+    dessin.draw_line(rnd_line.rotate(center, angle))
+
 
 def main():
     '''
     Fonction principale
     '''
     dessin.header()
-    test_rotation_point()
+    test_rotation_line()
     dessin.footer()
     dessin.write_file()
 
