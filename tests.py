@@ -4,6 +4,7 @@ développement
 '''
 
 from svg import SVG
+from math import pi
 from geometry import random_line, random_point
 from geometry import Point
 
@@ -51,13 +52,24 @@ def test_symmetrical_line():
     print(ligne.get_symmetrical(Point(500, 500)))
     dessin.draw_line(ligne.get_symmetrical(point_of_symmetry))
 
+def test_rotation_point():
+    '''
+    Test permettant de vérifier que la rotation d'un point se passe correctement
+    '''
+    center = Point(500, 500)
+    rnd_point = random_point((500, 700), (0,500))
+    angle = 90
+    dessin.draw_point(center)
+    dessin.draw_point(rnd_point)
+    dessin.draw_point(rnd_point.rotate(center, angle))
+
 
 def main():
     '''
     Fonction principale
     '''
     dessin.header()
-    test_symmetrical_line()
+    test_rotation_point()
     dessin.footer()
     dessin.write_file()
 
