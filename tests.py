@@ -54,7 +54,7 @@ def test_symmetrical_line():
 
 def main():
     '''
-    Fonction principale
+    Fonction principale qui déroule l'ensemble des tests
     '''
     dessin.header()
     test_symmetrical_line()
